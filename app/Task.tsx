@@ -1,7 +1,13 @@
 import React from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
-export default function Task(props) {
+interface TaskProps {
+    text: string;
+    onDelete: () => void;
+    onDone: () => void;
+}
+
+export default function Task(props: TaskProps) {
     return (
         <View style={styles.item}>
             <View style={styles.left}>
@@ -16,7 +22,7 @@ export default function Task(props) {
                     <Text style={{ color: "#fff" }}>Delete</Text>
                 </Pressable>
             </View>
-            </View>
+        </View>
     )
 }
 
